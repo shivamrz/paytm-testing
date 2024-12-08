@@ -4,7 +4,7 @@ const {User, Account}=require("../db");
 const jwt=require("jsonwebtoken");
 const {JWT_SECRET} = require("../config");
 const {authMiddleware} =require("../middlewares")
-export const userRouter=express.Router();
+const userRouter=express.Router();
 
 
 const signupSchema = zod.object({
@@ -138,3 +138,4 @@ userRouter.get("/bulk", async(req, res)=>{
     })
 })
 
+module.exports=userRouter;
